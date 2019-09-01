@@ -3,8 +3,12 @@ import asyncio
 from bs4 import BeautifulSoup
 from search import player_search, item_search, guild_search
 import sqlite3
+import json
 
-token = "NTkwMjkwNjQ3MTE0ODQyMTE0.XQ6TWg.1jR6bfeiuahv8ZQIahxcJTfmXKc"
+file = open("token.json")
+data = file.read()
+o = json.loads(data)
+token = str(o["token"])
 
 
 client = discord.Client()
